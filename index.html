@@ -1,13 +1,14 @@
  <!DOCTYPE html>
-<html>
+<html lang='sk'>
 <head>
-    <meta charset="UTF-8">
+    <meta charset='UTF-8'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dosis'>
     <style>
         body {
             font-family: 'Dosis';
             letter-spacing: 0.1em;
-            text-align: justify;}
+            margin: 0;
+            text-align: center;}
         aside {
             background: black;
             text-align: center;
@@ -16,24 +17,74 @@
             top: 0;
             width: 20em;
             height: 100%;}
-        aside > h1 {
+        aside h1 {
             font-size: 2em;}
-        aside > p {
+        aside p {
             margin: 1em;}
-        aside * {
-            color: silver;
-            position: relative;
-            top: 20%;}
-        a[href^=mailto] {
+        aside a[href^=mailto] {
             border-style: solid;
             border: 0 solid silver;
             border-top-width: medium;
             padding: 1em;
             font-weight: bold;
             text-decoration: none;}
+        aside * {
+            color: silver;
+            position: relative;
+            top: 20%;}
+        h2 {
+            text-align: center;}
+        .date {
+            display: inline-block;
+            text-align: center;
+            width: 10em;}
+        .datepad {
+            display: inline-block;
+            margin-left: 10em;}
+        .highlight {
+            font-weight: bolder;}
         #main {
             margin-left: 20em;
             padding: 1em;}
+        #main > header {
+            text-align: justify;}
+        #main > section {
+            display: inline-block;
+            margin: auto;
+            padding-top: 2em;
+            text-align: left;}
+        #main > #skills {
+            display: grid;
+            grid-template:
+                'head head head'
+                'lang user prog'}
+        #skills > h2 {
+            grid-area: head;}
+        #langSkills {
+            grid-area: lang;}
+        #PCUserSkills {
+            grid-area: user;}
+        #PCProgrammerSkills {
+            grid-area: prog;}
+        
+        @media screen and (max-width: 60em) {
+            #main > #skills {
+                display: inline-block;}
+            h3 {
+                text-align: center;}
+        }
+        
+        @media screen and (max-width: 50em) {
+            body {
+                padding: 0;}
+            aside {
+                position: static;
+                margin: 0;
+                padding: 0.01em 0 1em 0;
+                width: 100%;}
+            #main {
+                margin-left: 0;}
+        }
     </style>
     <title>Martin Bobák - životopis</title>
 </head>
@@ -59,16 +110,13 @@
                 O mne
             </h2>
             <p>
-                Aj keď som dva roky bez školy a pracovných skúseností, chcem sa 
-    vrátiť k tomu, čo mám rád a dostať novú šancu sa realizovať. Rád si osvojujem 
-    nové spôsoby nazerania na problémy i na ich riešenia. Som učenlivý, usilovný a 
-    teším sa na nové výzvy, ktoré mi pracovný život prinesie.
+                Rád si osvojujem nové spôsoby nazerania na problémy i na ich riešenia. Som učenlivý, usilovný a teším sa na nové výzvy, ktoré mi pracovný život prinesie. Aj keď som dva roky bez školy a pracovných skúseností, chcem sa vrátiť k tomu, čo mám rád a dostať novú šancu sa realizovať. 
             </p>
         </header>
         
         <section id='skills'>
             <h2>Znalosti</h2>
-            <section>
+            <section id='langSkills'>
                 <h3>
                     Jazykové znalosti
                 </h3>
@@ -77,26 +125,26 @@
                     Nemecký jazyk - začiatočník
                 </p>
             </section>
-            <section>
+            <section id='PCUserSkills'>
                 <h3>
                     Počítačové znalosti - používateľ
                 </h3>
                 <p>
-                    <span class='blue'>Open/Libre/MS Office</span> - pokročilý<br>
-                    <span class='blue'>MS Windows</span> - pokročilý<br>
-                    <span class='blue'>Linux</span> - pokročilý<br>
-                    <span class='blue'>Inkscape</span> - mierne pokročilý<br>
-                    <span class='blue'>T<sub>E</sub>X</span> - začiatočník
+                    <span class='highlight'>Open/Libre/MS Office</span> - pokročilý<br>
+                    <span class='highlight'>MS Windows</span> - pokročilý<br>
+                    <span class='highlight'>Linux</span> - pokročilý<br>
+                    <span class='highlight'>Inkscape</span> - mierne pokročilý<br>
+                    <span class='highlight'>T<sub>E</sub>X</span> - začiatočník
                 </p>
             </section>
-            <section>
+            <section id='PCProgrammerSkills'>
                 <h3>
                     Počítačové znalosti - programátor
                 </h3>
                 <p>
-                    <span class='blue'>Delphi</span> - základy<br>
-                    <span class='blue'>Python 3</span> - základy<br>
-                    <span class='blue'>HTML, CSS, JS</span> - základy
+                    <span class='highlight'>Delphi</span> - základy<br>
+                    <span class='highlight'>Python 3</span> - základy<br>
+                    <span class='highlight'>HTML, CSS, JS</span> - základy
                 </p>
             </section>
         </section>
@@ -106,19 +154,19 @@
                 Vzdelanie
             </h2>
             <p>
-                <span class='blue'>Fakulta matematiky, fyziky a informatiky</span>, 
+                <span class='highlight'>Fakulta matematiky, fyziky a informatiky</span>, 
     Univerzita Komenského v Bratislave<br>
                 <span class='date'>2012 - 2015</span>Aplikovaná informatika - 
     nedokončené štúdium
             </p>
             <p>
-                <span class='blue'>Fakulta matematiky, fyziky a informatiky</span>, 
+                <span class='highlight'>Fakulta matematiky, fyziky a informatiky</span>, 
     Univerzita Komenského v Bratislave<br>
                 <span class='date'>2010 - 2012</span>Informatika - 
     nedokončené štúdium
-            <p/>
+            </p>
             <p>
-                <span class='blue'>Gymnázium Jura Hronca</span>, Novohradská 3, 
+                <span class='highlight'>Gymnázium Jura Hronca</span>, Novohradská 3, 
     Bratislava<br>
                 <span class='date'>2006 - 2010</span>Informatika
             </p>
@@ -129,16 +177,15 @@
                 Priebeh zamestnaní
             </h2>
             <p>
-                <span class='date'>od 12/2017</span></span><span 
-    class='blue'>Detský domov STUDIENKA</span>, Bratislava<br>
+                <span class='date'>od 12/2017</span><span class='highlight'>Detský domov STUDIENKA</span>, Bratislava<br>
                 <span class='datepad'>údržba - drobné opravy, hrabanie lístia</span><br>
                 <span class='date'>2015 - 2017</span>rekonvalescencia po 
     úraze<br>
                 <span class='date'>11/2013 - 01/2014</span><span 
-    class='blue'>CEZAP</span>, UK v Bratislave<br>
+    class='highlight'>CEZAP</span>, UK v Bratislave<br>
                 <span class='datepad'>spracovanie literatúry do podoby 
     vhodnej pre slabozrakých a nevidiacich</span><br>
-                <span class='date'>09/2010 - 10/2013</span><span class='blue'>Stage 
+                <span class='date'>09/2010 - 10/2013</span><span class='highlight'>Stage 
     Hands s.r.o.</span>, Bratislava<br>
                 <span class='datepad'> manipulačné práce, pomoc pri montáži 
     a demontáži pódií, hliníkových konštrukcií, svetelnej a zvukovej techniky a 
