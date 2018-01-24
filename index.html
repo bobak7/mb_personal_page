@@ -34,6 +34,49 @@
             top: 20%;}
         h2 {
             text-align: center;}
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;}
+        li {
+            margin: 0.5em;}
+        .skill {
+            display: inline-block;
+            width: 12em;}
+        .progressbar {
+            display: inline-block;
+            background: silver;
+            height: 1.2em;
+            width: 200px;
+            vertical-align: text-bottom;}
+        .progressbar > [class*=progress] {
+            color: white;
+            background: black;
+            box-sizing: border-box;
+            height: 100%;
+            padding: 0.1em;
+            font-size: 0.8em;
+            text-align: right;}
+        .progress13 {
+            width: 26px;}
+        .progress13:after {
+            content: '13% ';}
+        .progress33 {
+            width: 67px;}
+        .progress33:after {
+            content: '33% ';}
+        .progress47 {
+            width: 94px;}
+        .progress47:after {
+            content: '47%';}
+        .progress67 {
+            width: 133px;}
+        .progress67:after {
+            content: '67%';}
+        .progress90 {
+            width: 180px;}
+        .progress90:after {
+            content: '90%';}
         .date {
             display: inline-block;
             text-align: center;
@@ -45,34 +88,14 @@
             font-weight: bolder;}
         #main {
             margin-left: 20em;
-            padding: 1em;}
-        #main > header {
+            padding: 1em 2em 1em 2em;}
+        #main > #about {
             text-align: justify;}
         #main > section {
             display: inline-block;
             margin: auto;
             padding-top: 2em;
             text-align: left;}
-        #main > #skills {
-            display: grid;
-            grid-template:
-                'head head head'
-                'lang user prog'}
-        #skills > h2 {
-            grid-area: head;}
-        #langSkills {
-            grid-area: lang;}
-        #PCUserSkills {
-            grid-area: user;}
-        #PCProgrammerSkills {
-            grid-area: prog;}
-        
-        @media screen and (max-width: 60em) {
-            #main > #skills {
-                display: inline-block;}
-            h3 {
-                text-align: center;}
-        }
         
         @media screen and (max-width: 50em) {
             body {
@@ -105,49 +128,94 @@
     
     <section id='main'>
         
-        <header id='about'>
+        <section id='about'>
             <h2>
                 O mne
             </h2>
             <p>
                 Rád si osvojujem nové spôsoby nazerania na problémy i na ich riešenia. Som učenlivý, usilovný a teším sa na nové výzvy, ktoré mi pracovný život prinesie. Aj keď som dva roky bez školy a pracovných skúseností, chcem sa vrátiť k tomu, čo mám rád a dostať novú šancu sa realizovať. 
             </p>
-        </header>
+        </section><br>
         
         <section id='skills'>
             <h2>Znalosti</h2>
-            <section id='langSkills'>
-                <h3>
-                    Jazykové znalosti
-                </h3>
-                <p>
-                    Anglický jazyk - pokročilý<br>
-                    Nemecký jazyk - začiatočník
-                </p>
-            </section>
-            <section id='PCUserSkills'>
-                <h3>
-                    Počítačové znalosti - používateľ
-                </h3>
-                <p>
-                    <span class='highlight'>Open/Libre/MS Office</span> - pokročilý<br>
-                    <span class='highlight'>MS Windows</span> - pokročilý<br>
-                    <span class='highlight'>Linux</span> - pokročilý<br>
-                    <span class='highlight'>Inkscape</span> - mierne pokročilý<br>
-                    <span class='highlight'>T<sub>E</sub>X</span> - začiatočník
-                </p>
-            </section>
-            <section id='PCProgrammerSkills'>
-                <h3>
-                    Počítačové znalosti - programátor
-                </h3>
-                <p>
-                    <span class='highlight'>Delphi</span> - základy<br>
-                    <span class='highlight'>Python 3</span> - základy<br>
-                    <span class='highlight'>HTML, CSS, JS</span> - základy
-                </p>
-            </section>
-        </section>
+            <ul>
+                <li>
+                    <span class='skill'>Pascal (Delphi/Lazarus)</span>
+                    <div class='progressbar'>
+                        <div class='progress33'></div>
+                    </div>
+                </li>
+                <li>
+                    <span class='skill'>Python</span>
+                    <div class='progressbar'>
+                        <div class='progress67'></div>
+                    </div>
+                </li>
+                <li>
+                    <span class='skill'>Java</span>
+                    <div class='progressbar'>
+                        <div class='progress13'></div>
+                    </div>
+                </li>
+                <li>
+                    <span class='skill'>SQL</span>
+                    <div class='progressbar'>
+                        <div class='progress13'></div>
+                    </div>
+                </li>
+                <li>
+                    <span class='skill'>JavaScript</span>
+                    <div class='progressbar'>
+                        <div class='progress47'></div>
+                    </div>
+                </li>
+                <li>
+                   <span class='skill'> HTML, CSS</span>
+                    <div class='progressbar'>
+                        <div class='progress90'></div>
+                    </div>
+                </li>
+                <li>
+                    <span class='skill'>T<sub>E</sub>X</span>
+                    <div class='progressbar'>
+                        <div class='progress13'></div>
+                    </div>
+                </li>
+                <li>
+                    <span class='skill'>Inkscape</span>
+                    <div class='progressbar'>
+                        <div class='progress67'></div>
+                    </div>
+                </li>
+                <li>
+                    <span class='skill'>Open/Libre/MS Office</span>
+                    <div class='progressbar'>
+                        <div class='progress67'></div>
+                    </div>
+                </li>
+                <li>
+                    <span class='skill'>Git</span>
+                    <div class='progressbar'>
+                        <div class='progress13'></div>
+                    </div>
+                </li>
+                <li>
+                    <span class='skill'>Windows, Linux</span>
+                    <div class='progressbar'>
+                        <div class='progress67'></div>
+                    </div>
+                </li>
+            </ul>
+        </section><br>
+        
+        <section id='langSkills'>
+            <h2>Jazyky</h2>
+            <p>
+                Anglický jazyk - pokročilý<br>
+                Nemecký jazyk - začiatočník
+            </p>
+        </section><br>
         
         <section id='education'>
             <h2>
@@ -170,7 +238,7 @@
     Bratislava<br>
                 <span class='date'>2006 - 2010</span>Informatika
             </p>
-        </section>
+        </section><br>
         
         <section id='experience'>
             <h2>
@@ -191,7 +259,7 @@
     a demontáži pódií, hliníkových konštrukcií, svetelnej a zvukovej techniky a 
     i.</span>
             </p>
-        </section>
+        </section><br>
     
     </section>
 
