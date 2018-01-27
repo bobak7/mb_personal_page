@@ -17,21 +17,31 @@
             top: 0;
             width: 20em;
             height: 100%;}
-        aside h1 {
+        aside > h1 {
             font-size: 2em;}
-        aside p {
-            margin: 1em;}
-        aside a[href^=mailto] {
+        aside > a[href^=mailto] {
             border-style: solid;
             border: 0 solid silver;
             border-top-width: medium;
             padding: 1em;
             font-weight: bold;
             text-decoration: none;}
+        aside > p {
+            margin: 1em;}
         aside * {
             color: silver;
             position: relative;
             top: 20%;}
+        #main {
+            margin-left: 20em;
+            padding: 1em 2em 1em 2em;}
+        #main > #about {
+            text-align: justify;}
+        #main > section {
+            display: inline-block;
+            margin: auto;
+            padding-top: 2em;
+            text-align: left;}
         h2 {
             text-align: center;}
         ul {
@@ -43,40 +53,28 @@
         .skill {
             display: inline-block;
             width: 12em;}
-        .progressbar {
+        [class*='progressbar'] {
             display: inline-block;
             background: silver;
-            height: 1.2em;
-            width: 12em;
-            vertical-align: text-bottom;}
-        .progressbar > [class*=progress] {
-            color: white;
-            background: black;
             box-sizing: border-box;
-            height: 100%;
-            padding: 0.1em;
-            font-size: 0.8em;
-            text-align: right;}
-        .progress13 {
+            width: 12em;}
+        .progressfill {
+            box-sizing: border-box;
+            border: solid 0 black;
+            border-width: 0.4em 0 0 0;
+            height: 100%;}
+        .progressbar13 > .progressfill {
             width: 13%;}
-        .progress13:after {
-            content: '13% ';}
-        .progress33 {
+        .progressbar33 > .progressfill {
             width: 33%;}
-        .progress33:after {
-            content: '33% ';}
-        .progress47 {
+        .progressbar47 > .progressfill {
             width: 47%;}
-        .progress47:after {
-            content: '47%';}
-        .progress67 {
+        .progressbar50 > .progressfill {
+            width: 50%;}
+        .progressbar67 > .progressfill {
             width: 67%;}
-        .progress67:after {
-            content: '67%';}
-        .progress90 {
+        .progressbar90 > .progressfill {
             width: 90%;}
-        .progress90:after {
-            content: '90%';}
         .date {
             display: inline-block;
             text-align: center;
@@ -86,18 +84,8 @@
             margin-left: 10em;}
         .highlight {
             font-weight: bolder;}
-        #main {
-            margin-left: 20em;
-            padding: 1em 2em 1em 2em;}
-        #main > #about {
-            text-align: justify;}
-        #main > section {
-            display: inline-block;
-            margin: auto;
-            padding-top: 2em;
-            text-align: left;}
         
-        @media screen and (max-width: 50em) {
+        @media screen and (max-width: 60em) {
             body {
                 padding: 0;}
             aside {
@@ -107,6 +95,22 @@
                 width: 100%;}
             #main {
                 margin-left: 0;}
+        }
+        
+        @media print {
+            body {
+                padding: 0;}
+            aside {
+                position: static;
+                margin: 0;
+                padding: 0;
+                width: 100%;}
+            aside > p {
+                margin: 0.5em;}
+            #main {
+                margin-left: 0;}
+            [class*='progressbar'] {
+                border: solid 1pt silver;}
         }
     </style>
     <title>Martin Bobák - životopis</title>
@@ -142,79 +146,102 @@
             <ul>
                 <li>
                     <span class='skill'>Pascal (Delphi/Lazarus)</span>
-                    <div class='progressbar'>
-                        <div class='progress33'></div>
+                    <div class='progressbar33'>
+                        <div class='progressfill'></div>
                     </div>
+                    33 %
                 </li>
                 <li>
                     <span class='skill'>Python</span>
-                    <div class='progressbar'>
-                        <div class='progress67'></div>
+                    <div class='progressbar67'>
+                        <div class='progressfill'></div>
                     </div>
+                    67 %
                 </li>
                 <li>
                     <span class='skill'>Java</span>
-                    <div class='progressbar'>
-                        <div class='progress13'></div>
+                    <div class='progressbar13'>
+                        <div class='progressfill'></div>
                     </div>
+                    13 %
                 </li>
                 <li>
                     <span class='skill'>SQL</span>
-                    <div class='progressbar'>
-                        <div class='progress13'></div>
+                    <div class='progressbar13'>
+                        <div class='progressfill'></div>
                     </div>
+                    13 %
                 </li>
                 <li>
                     <span class='skill'>JavaScript</span>
-                    <div class='progressbar'>
-                        <div class='progress47'></div>
+                    <div class='progressbar47'>
+                        <div class='progressfill'></div>
                     </div>
+                    47 %
                 </li>
                 <li>
                    <span class='skill'> HTML, CSS</span>
-                    <div class='progressbar'>
-                        <div class='progress90'></div>
+                    <div class='progressbar90'>
+                        <div class='progressfill'></div>
                     </div>
+                    90 %
                 </li>
                 <li>
                     <span class='skill'>T<sub>E</sub>X</span>
-                    <div class='progressbar'>
-                        <div class='progress13'></div>
+                    <div class='progressbar13'>
+                        <div class='progressfill'></div>
                     </div>
+                    13 %
                 </li>
                 <li>
                     <span class='skill'>Inkscape</span>
-                    <div class='progressbar'>
-                        <div class='progress67'></div>
+                    <div class='progressbar67'>
+                        <div class='progressfill'></div>
                     </div>
+                    67 %
                 </li>
                 <li>
                     <span class='skill'>Open/Libre/MS Office</span>
-                    <div class='progressbar'>
-                        <div class='progress67'></div>
+                    <div class='progressbar67'>
+                        <div class='progressfill'></div>
                     </div>
+                    67 %
                 </li>
                 <li>
                     <span class='skill'>Git</span>
-                    <div class='progressbar'>
-                        <div class='progress13'></div>
+                    <div class='progressbar13'>
+                        <div class='progressfill'></div>
                     </div>
+                    13 %
                 </li>
                 <li>
                     <span class='skill'>Windows, Linux</span>
-                    <div class='progressbar'>
-                        <div class='progress67'></div>
+                    <div class='progressbar67'>
+                        <div class='progressfill'></div>
                     </div>
+                    67 %
                 </li>
             </ul>
         </section><br>
         
         <section id='langSkills'>
             <h2>Jazyky</h2>
-            <p>
-                Anglický jazyk - pokročilý<br>
-                Nemecký jazyk - začiatočník
-            </p>
+            <ul>
+                <li>
+                    <span class='skill'>Anglický jazyk</span>
+                    <div class='progressbar50'>
+                        <div class='progressfill'></div>
+                    </div>
+                    pasívne
+                </li>
+                <li>
+                    <span class='skill'>Nemecký jazyk</span>
+                    <div class='progressbar13'>
+                        <div class='progressfill'></div>
+                    </div>
+                    začiatočník
+                </li>
+            </ul>
         </section><br>
         
         <section id='education'>
