@@ -20,7 +20,6 @@
         aside > h1 {
             font-size: 2em;}
         aside > a[href^=mailto] {
-            border-style: solid;
             border: 0 solid silver;
             border-top-width: medium;
             padding: 1em;
@@ -44,37 +43,20 @@
             text-align: left;}
         h2 {
             text-align: center;}
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;}
-        li {
-            margin: 0.5em;}
-        .skill {
-            display: inline-block;
-            width: 12em;}
-        [class*='progressbar'] {
-            display: inline-block;
+        .progressValue {
+            float: right;}
+        .progressbar {
             background: silver;
-            box-sizing: border-box;
-            width: 12em;}
-        .progressfill {
-            box-sizing: border-box;
-            border: solid 0 black;
-            border-width: 0.4em 0 0 0;
-            height: 100%;}
-        .progressbar13 > .progressfill {
-            width: 13%;}
-        .progressbar33 > .progressfill {
-            width: 33%;}
-        .progressbar47 > .progressfill {
-            width: 47%;}
-        .progressbar50 > .progressfill {
-            width: 50%;}
-        .progressbar67 > .progressfill {
-            width: 67%;}
-        .progressbar90 > .progressfill {
-            width: 90%;}
+            border: 0;
+            padding: 0;
+            margin-top: 0.2em;
+            width: 100%;
+            height: 0.25em;
+            vertical-align: text-top;}
+        .progressbar > rect:first-of-type {
+            fill: silver;}
+        .progressbar > rect:nth-of-type(2) {
+            fill: black;}
         .date {
             display: inline-block;
             text-align: center;
@@ -84,6 +66,40 @@
             margin-left: 10em;}
         .highlight {
             font-weight: bolder;}
+        #main > #skills {
+            display: grid;
+            grid-column-gap: 2em;
+            grid-template:
+                'heading heading'
+                'web graphics'
+                'db win'
+                'apps lin';}
+        #skills > h2 {
+            grid-area: heading;}
+        #web {
+            grid-area: web;}
+        #apps {
+            grid-area: apps;}
+        #db {
+            grid-area: db;}
+        #graphics {
+            grid-area: graphics;}
+        #win {
+            grid-area: win;}
+        #lin {
+            grid-area: lin;}
+        #main > #langSkills {
+            display: grid;
+            grid-column-gap: 2em;
+            grid-template:
+                'heading heading'
+                'langEn langDe';}
+        #langSkills > h2 {
+            grid-area: heading;}
+        #langEn {
+            grid-area: langEn;}
+        #langDe {
+            grid-area: langDe;}
         
         @media screen and (max-width: 60em) {
             body {
@@ -109,8 +125,6 @@
                 margin: 0.5em;}
             #main {
                 margin-left: 0;}
-            [class*='progressbar'] {
-                border: solid 1pt silver;}
         }
     </style>
     <title>Martin Bobák - životopis</title>
@@ -143,135 +157,204 @@
         
         <section id='skills'>
             <h2>Znalosti</h2>
-            <ul>
-                <li>
-                    <span class='skill'>Pascal (Delphi/Lazarus)</span>
-                    <div class='progressbar33'>
-                        <div class='progressfill'></div>
-                    </div>
-                    33 %
-                </li>
-                <li>
-                    <span class='skill'>Python</span>
-                    <div class='progressbar67'>
-                        <div class='progressfill'></div>
-                    </div>
-                    67 %
-                </li>
-                <li>
-                    <span class='skill'>Java</span>
-                    <div class='progressbar13'>
-                        <div class='progressfill'></div>
-                    </div>
-                    13 %
-                </li>
-                <li>
-                    <span class='skill'>SQL</span>
-                    <div class='progressbar13'>
-                        <div class='progressfill'></div>
-                    </div>
-                    13 %
-                </li>
-                <li>
-                    <span class='skill'>JavaScript</span>
-                    <div class='progressbar47'>
-                        <div class='progressfill'></div>
-                    </div>
-                    47 %
-                </li>
-                <li>
-                   <span class='skill'> HTML, CSS</span>
-                    <div class='progressbar90'>
-                        <div class='progressfill'></div>
-                    </div>
-                    90 %
-                </li>
-                <li>
-                    <span class='skill'>T<sub>E</sub>X</span>
-                    <div class='progressbar13'>
-                        <div class='progressfill'></div>
-                    </div>
-                    13 %
-                </li>
-                <li>
-                    <span class='skill'>Inkscape</span>
-                    <div class='progressbar67'>
-                        <div class='progressfill'></div>
-                    </div>
-                    67 %
-                </li>
-                <li>
-                    <span class='skill'>Open/Libre/MS Office</span>
-                    <div class='progressbar67'>
-                        <div class='progressfill'></div>
-                    </div>
-                    67 %
-                </li>
-                <li>
-                    <span class='skill'>Git</span>
-                    <div class='progressbar13'>
-                        <div class='progressfill'></div>
-                    </div>
-                    13 %
-                </li>
-                <li>
-                    <span class='skill'>Windows, Linux</span>
-                    <div class='progressbar67'>
-                        <div class='progressfill'></div>
-                    </div>
-                    67 %
-                </li>
-            </ul>
+            <section id='web'>
+                <h3>Web</h3>
+                <div>
+                    HTML, CSS<span class='progressValue'>90 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='90%' height='100%'></rect>
+                    </svg>
+                </div>
+                <div>
+                    JavaScript<span class='progressValue'>47 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='47%' height='100%'></rect>
+                    </svg>
+                </div>
+            </section>
+            <section id='apps'>
+                <h3>Apps</h3>
+                <div>
+                    Pascal (Delphi/Lazarus)<span class='progressValue'>33 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='33%' height='100%'></rect>
+                    </svg>
+                </div>
+                <div>
+                    Python<span class='progressValue'>67 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='67%' height='100%'></rect>
+                    </svg>
+                </div>
+                <div>
+                    Java<span class='progressValue'>13 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='13%' height='100%'></rect>
+                    </svg>
+                </div>
+            </section>
+            <section id='db'>
+                <h3>Databázy</h3>
+                <div>
+                    MySQL, MariaDB<span class='progressValue'>13 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='13%' height='100%'></rect>
+                    </svg>
+                </div>
+                <div>
+                    Oracle PL/SQL<span class='progressValue'>13 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='13%' height='100%'></rect>
+                    </svg>
+                </div>
+            </section>
+            <section id='graphics'>
+                <h3>Grafika</h3>
+                <div>
+                    Inkscape<span class='progressValue'>67 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='67%' height='100%'></rect>
+                    </svg>
+                </div>
+            </section>
+            <section id='win'>
+                <h3>Windows</h3>
+                <div>
+                    MS Office Word<span class='progressValue'>75 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='75%' height='100%'></rect>
+                    </svg>
+                </div>
+                <div>
+                    MS Office Excel<span class='progressValue'>75 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='75%' height='100%'></rect>
+                    </svg>
+                </div>
+            </section>
+            <section id='lin'>
+                <h3>Linux</h3>
+                <div>
+                    T<sub>E</sub>X<span class='progressValue'>13 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='13%' height='100%'></rect>
+                    </svg>
+                </div>
+                <div>
+                    LibreOffice Writer<span class='progressValue'>75 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='75%' height='100%'></rect>
+                    </svg>
+                </div>
+                <div>
+                    LibreOffice Calc<span class='progressValue'>75 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='75%' height='100%'></rect>
+                    </svg>
+                </div>
+                <div>
+                    Git<span class='progressValue'>13 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='13%' height='100%'></rect>
+                    </svg>
+                </div>
+            </section>
         </section><br>
         
         <section id='langSkills'>
             <h2>Jazyky</h2>
-            <ul>
-                <li>
-                    <span class='skill'>Anglický jazyk</span>
-                    <div class='progressbar50'>
-                        <div class='progressfill'></div>
-                    </div>
-                    pasívne
-                </li>
-                <li>
-                    <span class='skill'>Nemecký jazyk</span>
-                    <div class='progressbar13'>
-                        <div class='progressfill'></div>
-                    </div>
-                    začiatočník
-                </li>
-            </ul>
+            <section id='langEn'>
+                <h3>Angličtina</h3>
+                <div>
+                    rozumiem (text, konverzácia)<span class='progressValue'>67 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='67%' height='100%'></rect>
+                    </svg>
+                </div>
+                <div>
+                    píšem<span class='progressValue'>50 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='50%' height='100%'></rect>
+                    </svg>
+                </div>
+                <div>
+                    rozprávam<span class='progressValue'>33 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='33%' height='100%'></rect>
+                    </svg>
+                </div>
+            </section>
+            <section id='langDe'>
+                <h3>Nemčina</h3>
+                <div>
+                    rozumiem (text, konverzácia)<span class='progressValue'>33 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='33%' height='100%'></rect>
+                    </svg>
+                </div>
+                <div>
+                    píšem<span class='progressValue'>20 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='20%' height='100%'></rect>
+                    </svg>
+                </div>
+                <div>
+                    rozprávam<span class='progressValue'>13 %</span>
+                    <svg class='progressbar'>
+                        <rect width='100%' height='100%'></rect>
+                        <rect width='13%' height='100%'></rect>
+                    </svg>
+                </div>
+            </section>
         </section><br>
         
         <section id='education'>
             <h2>
                 Vzdelanie
             </h2>
-            <p>
+            <div>
                 <span class='highlight'>Fakulta matematiky, fyziky a informatiky</span>, 
     Univerzita Komenského v Bratislave<br>
                 <span class='date'>2012 - 2015</span>Aplikovaná informatika - 
     nedokončené štúdium
-            </p>
-            <p>
+            </div>
+            <div>
                 <span class='highlight'>Fakulta matematiky, fyziky a informatiky</span>, 
     Univerzita Komenského v Bratislave<br>
                 <span class='date'>2010 - 2012</span>Informatika - 
     nedokončené štúdium
-            </p>
-            <p>
+            </div>
+            <div>
                 <span class='highlight'>Gymnázium Jura Hronca</span>, Novohradská 3, 
     Bratislava<br>
                 <span class='date'>2006 - 2010</span>Informatika
-            </p>
+            </div>
         </section><br>
         
         <section id='experience'>
             <h2>
                 Priebeh zamestnaní
             </h2>
-            <p>
+            <div>
                 <span class='date'>od 12/2017</span><span class='highlight'>Detský domov STUDIENKA</span>, Bratislava<br>
                 <span class='datepad'>údržba - drobné opravy, hrabanie lístia</span><br>
                 <span class='date'>2015 - 2017</span>rekonvalescencia po 
@@ -285,7 +368,7 @@
                 <span class='datepad'> manipulačné práce, pomoc pri montáži 
     a demontáži pódií, hliníkových konštrukcií, svetelnej a zvukovej techniky a 
     i.</span>
-            </p>
+            </div>
         </section><br>
     
     </section>
