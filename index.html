@@ -3,128 +3,16 @@
 <head>
     <meta charset='UTF-8'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dosis'>
+    <link rel='stylesheet' href='style.css'>
     <style>
-        body {
-            font-family: 'Dosis';
-            letter-spacing: 0.1em;
-            margin: 0;
-            text-align: center;}
-        aside {
-            background: black;
-            text-align: center;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 20em;
-            height: 100%;}
-        aside > h1 {
-            font-size: 2em;}
-        aside > a[href^=mailto] {
-            border: 0 solid silver;
-            border-top-width: medium;
-            padding: 1em;
-            font-weight: bold;
-            text-decoration: none;}
-        aside > p {
-            margin: 1em;}
-        aside * {
-            color: silver;
-            position: relative;
-            top: 20%;}
-        #main {
-            margin-left: 20em;
-            padding: 1em 2em 1em 2em;}
-        #main > #about {
-            text-align: justify;}
-        #main > section {
-            display: inline-block;
-            margin: auto;
-            padding-top: 2em;
-            text-align: left;}
-        h2 {
-            text-align: center;}
-        .progressValue {
-            float: right;}
-        .progressbar {
-            background: silver;
-            border: 0;
-            padding: 0;
-            margin-top: 0.2em;
-            width: 100%;
-            height: 0.25em;
-            vertical-align: text-top;}
-        .progressbar > rect:first-of-type {
-            fill: silver;}
-        .progressbar > rect:nth-of-type(2) {
-            fill: black;}
-        .date {
-            display: inline-block;
-            text-align: center;
-            width: 10em;}
-        .datepad {
-            display: inline-block;
-            margin-left: 10em;}
-        .highlight {
-            font-weight: bolder;}
-        #main > #skills {
-            display: grid;
-            grid-column-gap: 2em;
-            grid-template:
-                'heading heading'
-                'web graphics'
-                'db win'
-                'apps lin';}
-        #skills > h2 {
-            grid-area: heading;}
-        #web {
-            grid-area: web;}
-        #apps {
-            grid-area: apps;}
-        #db {
-            grid-area: db;}
-        #graphics {
-            grid-area: graphics;}
-        #win {
-            grid-area: win;}
-        #lin {
-            grid-area: lin;}
-        #main > #langSkills {
-            display: grid;
-            grid-column-gap: 2em;
-            grid-template:
-                'heading heading'
-                'langEn langDe';}
-        #langSkills > h2 {
-            grid-area: heading;}
-        #langEn {
-            grid-area: langEn;}
-        #langDe {
-            grid-area: langDe;}
-        
-        @media screen and (max-width: 60em) {
-            body {
-                padding: 0;}
-            aside {
-                position: static;
-                margin: 0;
-                padding: 0.01em 0 1em 0;
-                width: 100%;}
-            #main {
-                margin-left: 0;}
+        svg {
+            height: 0.2em;
         }
-        
-        @media print {
-            body {
-                padding: 0;}
-            aside {
-                position: static;
-                margin: 0;
-                padding: 0;
-                width: 100%;}
-            aside > p {
-                margin: 0.5em;}
-            #main {
-                margin-left: 0;}
+        rect {
+            fill: gray;
+        }
+        rect:first-of-type {
+            fill: silver;
         }
     </style>
     <title>Martin Bobák - životopis</title>
@@ -132,245 +20,240 @@
 
 <body>
 
-    <aside>
+    <section id='address'>
         <h1>Martin Bobák</h1>
+        <svg class='splitLine'><rect width='100%' height='100%'></rect></svg>
         <a href='mailto:bobak.mato@gmail.com'>bobak.mato@gmail.com</a>
-        <p>
-            +421 949 813 260
-        </p>
+        <a href='tel:+421949813260'>+421 949 813 260</a>
         <p>
             Humenské nám. 5<br>
             851 07 Bratislava
         </p>
-    </aside>
+    </section>
+        
+    <section id='about'>
+        <h2>
+            O mne
+        </h2>
+        <p>
+            Rád si osvojujem nové spôsoby nazerania na problémy i na ich riešenia. Som učenlivý, usilovný a teším sa na nové výzvy, ktoré mi pracovný život prinesie. Aj keď som dva roky bez školy a pracovných skúseností, chcem sa vrátiť k tomu, čo mám rád a dostať novú šancu sa realizovať. 
+        </p>
+    </section>
     
-    <section id='main'>
-        
-        <section id='about'>
-            <h2>
-                O mne
-            </h2>
-            <p>
-                Rád si osvojujem nové spôsoby nazerania na problémy i na ich riešenia. Som učenlivý, usilovný a teším sa na nové výzvy, ktoré mi pracovný život prinesie. Aj keď som dva roky bez školy a pracovných skúseností, chcem sa vrátiť k tomu, čo mám rád a dostať novú šancu sa realizovať. 
-            </p>
-        </section><br>
-        
-        <section id='skills'>
-            <h2>Znalosti</h2>
-            <section id='web'>
-                <h3>Web</h3>
-                <div>
-                    HTML, CSS<span class='progressValue'>90 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='90%' height='100%'></rect>
-                    </svg>
-                </div>
-                <div>
-                    JavaScript<span class='progressValue'>47 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='47%' height='100%'></rect>
-                    </svg>
-                </div>
-            </section>
-            <section id='apps'>
-                <h3>Apps</h3>
-                <div>
-                    Pascal (Delphi/Lazarus)<span class='progressValue'>33 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='33%' height='100%'></rect>
-                    </svg>
-                </div>
-                <div>
-                    Python<span class='progressValue'>67 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='67%' height='100%'></rect>
-                    </svg>
-                </div>
-                <div>
-                    Java<span class='progressValue'>13 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='13%' height='100%'></rect>
-                    </svg>
-                </div>
-            </section>
-            <section id='db'>
-                <h3>Databázy</h3>
-                <div>
-                    MySQL, MariaDB<span class='progressValue'>13 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='13%' height='100%'></rect>
-                    </svg>
-                </div>
-                <div>
-                    Oracle PL/SQL<span class='progressValue'>13 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='13%' height='100%'></rect>
-                    </svg>
-                </div>
-            </section>
-            <section id='graphics'>
-                <h3>Grafika</h3>
-                <div>
-                    Inkscape<span class='progressValue'>67 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='67%' height='100%'></rect>
-                    </svg>
-                </div>
-            </section>
-            <section id='win'>
-                <h3>Windows</h3>
-                <div>
-                    MS Office Word<span class='progressValue'>75 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='75%' height='100%'></rect>
-                    </svg>
-                </div>
-                <div>
-                    MS Office Excel<span class='progressValue'>75 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='75%' height='100%'></rect>
-                    </svg>
-                </div>
-            </section>
-            <section id='lin'>
-                <h3>Linux</h3>
-                <div>
-                    T<sub>E</sub>X<span class='progressValue'>13 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='13%' height='100%'></rect>
-                    </svg>
-                </div>
-                <div>
-                    LibreOffice Writer<span class='progressValue'>75 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='75%' height='100%'></rect>
-                    </svg>
-                </div>
-                <div>
-                    LibreOffice Calc<span class='progressValue'>75 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='75%' height='100%'></rect>
-                    </svg>
-                </div>
-                <div>
-                    Git<span class='progressValue'>13 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='13%' height='100%'></rect>
-                    </svg>
-                </div>
-            </section>
-        </section><br>
-        
-        <section id='langSkills'>
-            <h2>Jazyky</h2>
-            <section id='langEn'>
-                <h3>Angličtina</h3>
-                <div>
-                    rozumiem (text, konverzácia)<span class='progressValue'>67 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='67%' height='100%'></rect>
-                    </svg>
-                </div>
-                <div>
-                    píšem<span class='progressValue'>50 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='50%' height='100%'></rect>
-                    </svg>
-                </div>
-                <div>
-                    rozprávam<span class='progressValue'>33 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='33%' height='100%'></rect>
-                    </svg>
-                </div>
-            </section>
-            <section id='langDe'>
-                <h3>Nemčina</h3>
-                <div>
-                    rozumiem (text, konverzácia)<span class='progressValue'>33 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='33%' height='100%'></rect>
-                    </svg>
-                </div>
-                <div>
-                    píšem<span class='progressValue'>20 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='20%' height='100%'></rect>
-                    </svg>
-                </div>
-                <div>
-                    rozprávam<span class='progressValue'>13 %</span>
-                    <svg class='progressbar'>
-                        <rect width='100%' height='100%'></rect>
-                        <rect width='13%' height='100%'></rect>
-                    </svg>
-                </div>
-            </section>
-        </section><br>
-        
-        <section id='education'>
-            <h2>
-                Vzdelanie
-            </h2>
+    <section id='skills'>
+        <h2>Znalosti</h2>
+        <section id='web'>
+            <h3>Web</h3>
             <div>
-                <span class='highlight'>Fakulta matematiky, fyziky a informatiky</span>, 
-    Univerzita Komenského v Bratislave<br>
-                <span class='date'>2012 - 2015</span>Aplikovaná informatika - 
-    nedokončené štúdium
+                HTML, CSS<span class='progressValue'>90 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='90%' height='100%'></rect>
+                </svg>
             </div>
             <div>
-                <span class='highlight'>Fakulta matematiky, fyziky a informatiky</span>, 
-    Univerzita Komenského v Bratislave<br>
-                <span class='date'>2010 - 2012</span>Informatika - 
-    nedokončené štúdium
+                JavaScript<span class='progressValue'>47 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='47%' height='100%'></rect>
+                </svg>
+            </div>
+        </section>
+        <section id='apps'>
+            <h3>Apps</h3>
+            <div>
+                Pascal (Delphi/Lazarus)<span class='progressValue'>33 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='33%' height='100%'></rect>
+                </svg>
             </div>
             <div>
-                <span class='highlight'>Gymnázium Jura Hronca</span>, Novohradská 3, 
-    Bratislava<br>
-                <span class='date'>2006 - 2010</span>Informatika
+                Python<span class='progressValue'>67 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='67%' height='100%'></rect>
+                </svg>
             </div>
-        </section><br>
-        
-        <section id='experience'>
-            <h2>
-                Priebeh zamestnaní
-            </h2>
             <div>
-                <span class='date'>od 12/2017</span><span class='highlight'>Detský domov STUDIENKA</span>, Bratislava<br>
-                <span class='datepad'>údržba - drobné opravy, hrabanie lístia</span><br>
-                <span class='date'>2015 - 2017</span>rekonvalescencia po 
-    úraze<br>
-                <span class='date'>11/2013 - 01/2014</span><span 
-    class='highlight'>CEZAP</span>, UK v Bratislave<br>
-                <span class='datepad'>spracovanie literatúry do podoby 
-    vhodnej pre slabozrakých a nevidiacich</span><br>
-                <span class='date'>09/2010 - 10/2013</span><span class='highlight'>Stage 
-    Hands s.r.o.</span>, Bratislava<br>
-                <span class='datepad'> manipulačné práce, pomoc pri montáži 
-    a demontáži pódií, hliníkových konštrukcií, svetelnej a zvukovej techniky a 
-    i.</span>
+                Java<span class='progressValue'>13 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='13%' height='100%'></rect>
+                </svg>
             </div>
-        </section><br>
+        </section>
+        <section id='db'>
+            <h3>Databázy</h3>
+            <div>
+                MySQL, MariaDB<span class='progressValue'>13 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='13%' height='100%'></rect>
+                </svg>
+            </div>
+            <div>
+                Oracle PL/SQL<span class='progressValue'>13 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='13%' height='100%'></rect>
+                </svg>
+            </div>
+        </section>
+        <section id='graphics'>
+            <h3>Grafika</h3>
+            <div>
+                Inkscape<span class='progressValue'>67 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='67%' height='100%'></rect>
+                </svg>
+            </div>
+        </section>
+        <section id='windows'>
+            <h3>Windows</h3>
+            <div>
+                MS Office Word<span class='progressValue'>75 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='75%' height='100%'></rect>
+                </svg>
+            </div>
+            <div>
+                MS Office Excel<span class='progressValue'>75 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='75%' height='100%'></rect>
+                </svg>
+            </div>
+        </section>
+        <section id='linux'>
+            <h3>Linux</h3>
+            <div>
+                T<sub>E</sub>X<span class='progressValue'>13 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='13%' height='100%'></rect>
+                </svg>
+            </div>
+            <div>
+                LibreOffice Writer<span class='progressValue'>75 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='75%' height='100%'></rect>
+                </svg>
+            </div>
+            <div>
+                LibreOffice Calc<span class='progressValue'>75 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='75%' height='100%'></rect>
+                </svg>
+            </div>
+            <div>
+                Git<span class='progressValue'>13 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='13%' height='100%'></rect>
+                </svg>
+            </div>
+        </section>
+    </section>
     
+    <section id='languages'>
+        <h2>Jazyky</h2>
+        <section id='langEn'>
+            <h3>Angličtina</h3>
+            <div>
+                rozumiem (text, konverzácia)<span class='progressValue'>67 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='67%' height='100%'></rect>
+                </svg>
+            </div>
+            <div>
+                píšem<span class='progressValue'>50 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='50%' height='100%'></rect>
+                </svg>
+            </div>
+            <div>
+                rozprávam<span class='progressValue'>33 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='33%' height='100%'></rect>
+                </svg>
+            </div>
+        </section>
+        <section id='langDe'>
+            <h3>Nemčina</h3>
+            <div>
+                rozumiem (text, konverzácia)<span class='progressValue'>33 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='33%' height='100%'></rect>
+                </svg>
+            </div>
+            <div>
+                píšem<span class='progressValue'>20 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='20%' height='100%'></rect>
+                </svg>
+            </div>
+            <div>
+                rozprávam<span class='progressValue'>13 %</span>
+                <svg class='progressbar'>
+                    <rect width='100%' height='100%'></rect>
+                    <rect width='13%' height='100%'></rect>
+                </svg>
+            </div>
+        </section>
+    </section>
+    
+    <section id='education'>
+        <h2>
+            Vzdelanie
+        </h2>
+        <div>
+            <span class='highlight'>Fakulta matematiky, fyziky a informatiky</span>, 
+Univerzita Komenského v Bratislave<br>
+            <span class='date'>2012 - 2015</span>Aplikovaná informatika - 
+nedokončené štúdium
+        </div>
+        <div>
+            <span class='highlight'>Fakulta matematiky, fyziky a informatiky</span>, 
+Univerzita Komenského v Bratislave<br>
+            <span class='date'>2010 - 2012</span>Informatika - 
+nedokončené štúdium
+        </div>
+        <div>
+            <span class='highlight'>Gymnázium Jura Hronca</span>, Novohradská 3, 
+Bratislava<br>
+            <span class='date'>2006 - 2010</span>Informatika
+        </div>
+    </section>
+    
+    <section id='experience'>
+        <h2>
+            Priebeh zamestnaní
+        </h2>
+        <div>
+            <span class='date'>od 12/2017</span><span class='highlight'>Detský domov STUDIENKA</span>, Bratislava<br>
+            <span class='datepad'>údržba - drobné opravy, hrabanie lístia</span><br>
+            <span class='date'>2015 - 2017</span>rekonvalescencia po 
+úraze<br>
+            <span class='date'>11/2013 - 01/2014</span><span 
+class='highlight'>CEZAP</span>, UK v Bratislave<br>
+            <span class='datepad'>spracovanie literatúry do podoby 
+vhodnej pre slabozrakých a nevidiacich</span><br>
+            <span class='date'>09/2010 - 10/2013</span><span class='highlight'>Stage 
+Hands s.r.o.</span>, Bratislava<br>
+            <span class='datepad'> manipulačné práce, pomoc pri montáži 
+a demontáži pódií, hliníkových konštrukcií, svetelnej a zvukovej techniky a 
+i.</span>
+        </div>
     </section>
 
 </body>

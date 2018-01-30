@@ -1,0 +1,187 @@
+
+body {
+    display: grid;
+    grid-row-gap: 2em;
+    grid-template:
+        'address'
+        'about'
+        'skills'
+        'languages'
+        'education'
+        'experience';
+    margin: 0 0 4em 0;
+    font-family: 'Dosis';
+    letter-spacing: 0.1em;
+}
+
+body > section {
+    padding: 0 2em 0 2em;
+}
+
+section h2 {
+    text-align: center;
+}
+
+.splitLine {
+    width: 15em;
+}
+
+.progressValue {
+    float: right;
+}
+
+.progressbar {
+    display: block;
+    border: 0;
+    width: 100%;
+}
+
+.progressbar > rect {
+    fill: black;
+}
+
+.progressbar > rect:first-of-type {
+    fill: silver;
+}
+
+.highlight {
+    font-weight: bolder;
+}
+
+.date {
+    display: inline-block;
+    width: 10em;
+    text-align: center;
+}
+
+.datepad {
+    display: inline-block;
+    margin-left: 10em;
+}
+
+#address {
+    grid-area: address;
+    background: black;
+    box-sizing: border-box;
+    padding: 1em;
+    text-align: center;
+}
+
+#address > * {
+    display: block;
+    color: silver;
+    border: 0;
+    margin: auto;
+    padding: 0.5em 0 0 0;
+}
+
+#address > h1 {
+    font-size: 2em;
+}
+
+#address > a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#about {
+    grid-area: about;
+    text-align: justify;
+}
+
+#skills {
+    grid-area: skills;
+    display: grid;
+    grid-column-gap: 2em;
+    grid-template:
+        'heading heading'
+        'web graphics'
+        'db windows'
+        'apps linux';
+}
+
+#skills > h2 {
+    grid-area: heading;
+}
+
+#web {
+    grid-area: web;
+}
+
+#apps {
+    grid-area: apps;
+}
+
+#db {
+    grid-area: db;
+}
+
+#graphics {
+    grid-area: graphics;
+}
+
+#windows {
+    grid-area: windows;
+}
+
+#linux {
+    grid-area: linux;
+}
+
+#languages {
+    grid-area: languages;
+    display: grid;
+    grid-column-gap: 2em;
+    grid-template:
+        'heading heading'
+        'langEn langDe';
+}
+
+#languages > h2 {
+    grid-area: heading;
+}
+
+#langEn {
+    grid-template: langEn;
+}
+
+#langDe {
+    grid-template: langDe;
+}
+
+#education {
+    grid-area: education;
+}
+
+#experience {
+    grid-area: experience;
+}
+
+
+
+@media screen and (min-width: 55em) {
+    
+    body {
+        margin-left: 20em;
+    }
+    
+    #address {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 20em;
+        height: 100%;
+    }
+    
+}
+
+@media screen and (min-width: 70em) {
+    
+    #skills {
+        grid-template:
+            'heading heading heading'
+            'web graphics db'
+            'apps windows linux';
+    }
+    
+}
