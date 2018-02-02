@@ -1,4 +1,9 @@
 
+sup {
+    color: red;
+    font-weight: bold;
+}
+
 body {
     display: grid;
     grid-row-gap: 2em;
@@ -95,9 +100,10 @@ section h2 {
     grid-column-gap: 2em;
     grid-template:
         'heading heading'
-        'web graphics'
-        'db windows'
-        'apps linux';
+        'windows linux'
+        'web apps'
+        'graphics db';
+    grid-template-columns: 1fr 1fr;
 }
 
 #skills > h2 {
@@ -135,6 +141,7 @@ section h2 {
     grid-template:
         'heading heading'
         'langEn langDe';
+    grid-template-columns: 1fr 1fr;
 }
 
 #languages > h2 {
@@ -173,15 +180,10 @@ section h2 {
         height: 100%;
     }
     
-}
-
-@media screen and (min-width: 70em) {
-    
-    #skills {
-        grid-template:
-            'heading heading heading'
-            'web graphics db'
-            'apps windows linux';
+    #address > * {
+        position: relative;
+        top: 20%;
+        
     }
     
 }
